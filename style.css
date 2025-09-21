@@ -1,146 +1,195 @@
-/* ======================================================
-   FitLifeHub Stylesheet
-   Author: Waldo Bosch
-   Date: September 21, 2025
-   Assignment: External CSS Styling
-   ====================================================== */
-
-/* --- Global Reset --- */
+/* RESET */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* --- Body --- */
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #f8f9fa; /* Light background */
-  color: #333;
+  font-family: "Segoe UI", Roboto, sans-serif;
   line-height: 1.6;
+  background: #f9fafb;
+  color: #111;
 }
 
-/* --- Header --- */
+/* CONTAINER */
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* HEADER */
 header {
-  background: linear-gradient(135deg, #6c63ff, #48c6ef);
-  color: white;
-  padding: 20px;
-  text-align: center;
-  border-bottom: 4px solid #444;
+  background: #0d1117;
+  color: #fff;
+  padding: 1rem 0;
 }
 
 header h1 {
-  margin-bottom: 8px;
-  font-size: 2rem;
-}
-
-header p {
-  font-size: 0.9rem;
-  opacity: 0.9;
-}
-
-/* --- Navigation --- */
-nav ul {
-  list-style: none;
-  display: flex;
-  justify-content: center;
-  margin-top: 12px;
-}
-
-nav ul li {
-  margin: 0 15px;
-}
-
-nav ul li a {
-  text-decoration: none;
-  color: white;
-  font-weight: bold;
-  transition: color 0.3s ease, border-bottom 0.3s ease;
-  padding-bottom: 3px;
-}
-
-nav ul li a:hover,
-nav ul li a.active {
-  color: #ffeaa7;
-  border-bottom: 2px solid #ffeaa7;
-}
-
-/* --- Main Content --- */
-main {
-  max-width: 900px;
-  margin: 30px auto;
-  padding: 20px;
-}
-
-h2 {
-  margin-bottom: 15px;
-  color: #6c63ff;
   font-size: 1.6rem;
 }
 
-.content p,
-.content ul {
-  margin-bottom: 15px;
-  font-size: 1rem;
-}
-
-.content ul li {
-  margin-left: 20px;
-  margin-bottom: 8px;
-}
-
-/* --- Form Styles --- */
-.contact-form {
+nav ul {
+  list-style: none;
   display: flex;
-  flex-direction: column;
-  gap: 15px;
-  background: white;
-  padding: 20px;
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+  transition: background 0.3s;
+}
+
+nav a:hover,
+nav a[aria-current="page"] {
+  background: #2563eb;
+}
+
+/* HERO */
+.hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+.hero img {
+  width: 100%;
   border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  object-fit: cover;
+  max-height: 350px;
 }
 
-.contact-form label {
-  font-weight: bold;
+.hero-text h2 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
 }
 
-.contact-form input,
-.contact-form textarea {
-  padding: 10px;
-  border: 1px solid #ccc;
+.hero-text .tagline {
+  color: #2563eb;
+  font-style: italic;
+}
+
+/* INTRO */
+.intro {
+  margin: 2rem 0;
+}
+
+.intro h2 {
+  margin-bottom: 1rem;
+}
+
+/* FEATURES / CARDS */
+.features .cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+.card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 1rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,.1);
+  text-align: center;
+}
+
+.card img {
+  width: 100%;
+  height: 200px;
   border-radius: 8px;
-  font-size: 1rem;
-  transition: border 0.3s ease, box-shadow 0.3s ease;
+  object-fit: cover;
 }
 
-.contact-form input:focus,
-.contact-form textarea:focus {
-  border: 1px solid #6c63ff;
+.card h3 {
+  margin: 1rem 0 0.5rem;
+}
+
+.card p {
+  margin-bottom: 1rem;
+}
+
+.btn {
+  display: inline-block;
+  background: #2563eb;
+  color: #fff;
+  padding: 0.6rem 1rem;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.btn:hover {
+  background: #1d4ed8;
+}
+
+/* VALUES */
+.values {
+  margin: 2rem 0;
+}
+
+.values ul {
+  list-style: disc;
+  margin-left: 1.5rem;
+  margin-top: 1rem;
+}
+
+/* FORM PAGE */
+form.contact-form {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,.1);
+  display: grid;
+  gap: 1rem;
+}
+
+form label {
+  font-weight: 600;
+}
+
+form input,
+form textarea {
+  width: 100%;
+  padding: 0.8rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font: inherit;
+}
+
+form input:focus,
+form textarea:focus {
   outline: none;
-  box-shadow: 0 0 6px rgba(108,99,255,0.4);
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37,99,235,0.2);
 }
 
-.contact-form button {
-  background: #6c63ff;
-  color: white;
-  font-size: 1rem;
-  padding: 12px;
+form button {
+  background: #2563eb;
+  color: #fff;
+  padding: 0.8rem 1.2rem;
   border: none;
   border-radius: 8px;
   cursor: pointer;
-  transition: background 0.3s ease;
+  font-weight: 600;
 }
 
-.contact-form button:hover {
-  background: #5146d9;
+form button:hover {
+  background: #1d4ed8;
 }
 
-/* --- Footer --- */
+/* FOOTER */
 footer {
-  background: #333;
-  color: white;
+  background: #0d1117;
+  color: #aaa;
   text-align: center;
-  padding: 15px;
-  margin-top: 40px;
-  font-size: 0.9rem;
+  padding: 1rem;
+  margin-top: 2rem;
 }
