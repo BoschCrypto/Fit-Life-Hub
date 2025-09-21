@@ -1,120 +1,146 @@
-/* ========================================
+/* ======================================================
+   FitLifeHub Stylesheet
    Author: Waldo Bosch
-   Date: Sept 20, 2025
-   Assignment: External CSS with Validation
-   ======================================== */
+   Date: September 21, 2025
+   Assignment: External CSS Styling
+   ====================================================== */
 
-/* ===== Global Styles ===== */
-body {
-  margin: 0; /* Removes default browser margin */
-  padding: 0; /* Removes default padding */
-  font-family: 'Helvetica Neue', Arial, sans-serif; /* Clean modern font */
-  background-color: #f5f7fa; /* Light neutral background */
-  color: #333; /* Standard dark text */
-  line-height: 1.6; /* Improves readability */
+/* --- Global Reset --- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-<head>
-  <meta charset="UTF-8">
-  <title>FitLifeHub</title>
-  <link rel="stylesheet" href="style.css"> <!-- External CSS linked here -->
-</head>
-<body>
-  <header>
-    <h1>Waldo Bosch | Sept 20, 2025 | External CSS & Validation Assignment</h1>
-  </header>
-  
-  <div class="card">
-    <h2 id="main-title">Welcome to FitLifeHub</h2>
-    <p>This is the homepage styled with an external style sheet.</p>
-  </div>
-</body>
 
-/* ===== Header ===== */
+/* --- Body --- */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f8f9fa; /* Light background */
+  color: #333;
+  line-height: 1.6;
+}
+
+/* --- Header --- */
 header {
-  background-color: #ddebaa; /* Light green header background */
-  border-bottom: 3px solid #93b5c6; /* Accent border */
+  background: linear-gradient(135deg, #6c63ff, #48c6ef);
+  color: white;
   padding: 20px;
   text-align: center;
+  border-bottom: 4px solid #444;
 }
 
 header h1 {
-  margin: 0;
-  color: #bd4f6c; /* Pinkish brand color */
-  font-size: 26px;
+  margin-bottom: 8px;
+  font-size: 2rem;
+}
+
+header p {
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+/* --- Navigation --- */
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  margin-top: 12px;
+}
+
+nav ul li {
+  margin: 0 15px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: white;
   font-weight: bold;
+  transition: color 0.3s ease, border-bottom 0.3s ease;
+  padding-bottom: 3px;
 }
 
-/* ===== Navigation Bar ===== */
-nav {
-  background-color: #93b5c6; /* Muted blue bar */
-  padding: 10px;
-  text-align: center;
+nav ul li a:hover,
+nav ul li a.active {
+  color: #ffeaa7;
+  border-bottom: 2px solid #ffeaa7;
 }
 
-nav a {
-  color: white; /* White links */
-  text-decoration: none; /* No underline */
-  margin: 0 15px; /* Spacing between links */
-  font-weight: bold;
-}
-
-nav a:hover {
-  text-decoration: underline; /* Hover effect */
-}
-
-/* ===== Main Content Area ===== */
+/* --- Main Content --- */
 main {
+  max-width: 900px;
+  margin: 30px auto;
   padding: 20px;
 }
 
-/* ===== Example ID ===== */
-#main-title {
-  font-size: 30px;
+h2 {
+  margin-bottom: 15px;
+  color: #6c63ff;
+  font-size: 1.6rem;
+}
+
+.content p,
+.content ul {
+  margin-bottom: 15px;
+  font-size: 1rem;
+}
+
+.content ul li {
+  margin-left: 20px;
+  margin-bottom: 8px;
+}
+
+/* --- Form Styles --- */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.contact-form label {
   font-weight: bold;
-  color: #2a2a2a;
-  text-align: center;
-  margin-bottom: 20px;
 }
 
-/* ===== Example Classes ===== */
-.card {
-  background-color: #fff; /* White background */
-  border: 1px solid #ccc; /* Light border */
-  border-radius: 12px; /* Rounded corners */
-  padding: 20px; /* Inner spacing (box model) */
-  margin: 20px auto; /* Outer spacing */
-  width: 80%; /* Responsive width */
-  max-width: 600px; /* Prevents card from being too wide */
-  box-shadow: 2px 2px 8px rgba(0,0,0,0.1); /* Subtle shadow */
-}
-
-.card h2 {
-  margin-top: 0;
-  color: #444;
-}
-
-/* ===== Buttons ===== */
-.button {
-  display: inline-block;
-  background-color: #bd4f6c; /* Pinkish background */
-  color: #fff; /* White text */
-  padding: 10px 20px;
+.contact-form input,
+.contact-form textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
   border-radius: 8px;
-  text-decoration: none;
-  font-weight: bold;
-  transition: background-color 0.3s ease;
+  font-size: 1rem;
+  transition: border 0.3s ease, box-shadow 0.3s ease;
 }
 
-.button:hover {
-  background-color: #93384f; /* Darker shade on hover */
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border: 1px solid #6c63ff;
+  outline: none;
+  box-shadow: 0 0 6px rgba(108,99,255,0.4);
 }
 
-/* ===== Footer ===== */
+.contact-form button {
+  background: #6c63ff;
+  color: white;
+  font-size: 1rem;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.contact-form button:hover {
+  background: #5146d9;
+}
+
+/* --- Footer --- */
 footer {
-  background-color: #ddebaa;
-  padding: 15px;
+  background: #333;
+  color: white;
   text-align: center;
-  font-size: 14px;
-  color: #555;
-  border-top: 2px solid #93b5c6;
+  padding: 15px;
+  margin-top: 40px;
+  font-size: 0.9rem;
 }
