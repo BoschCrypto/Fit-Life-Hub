@@ -1,0 +1,53 @@
+/* style.css */
+/* Author: Waldo Bosch */
+/* Date: Sept 20, 2025 */
+/* Assignment: External Style Sheet with Validation */
+
+/* Body styles */
+body {
+  margin: 0; /* removes default margin */
+  font-family: Helvetica, Arial, sans-serif; /* sets font */
+  background-color: #f5f7fa; /* light background */
+  color: #333; /* dark text */
+}
+
+/* Header styles */
+header {
+  background-color: #ddebaa; /* matches figma color scheme */
+  border-bottom: 2px solid #93b5c6; /* accent border */
+  padding: 15px;
+  text-align: center;
+}
+
+header h1 {
+  color: #bd4f6c;
+  margin: 0;
+  font-size: 24px;
+}
+
+/* Example ID (used once per page) */
+#main-title {
+  font-size: 28px;
+  font-weight: bold;
+}
+
+/* Example class (can be reused) */
+.card {
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 15px;
+  margin: 20px auto;
+  width: 80%;
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.1); /* subtle shadow */
+}
+
+/* Links */
+a {
+  color: #0077cc;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
