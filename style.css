@@ -13,6 +13,21 @@ body {
   color: #333; /* Standard dark text */
   line-height: 1.6; /* Improves readability */
 }
+<head>
+  <meta charset="UTF-8">
+  <title>FitLifeHub</title>
+  <link rel="stylesheet" href="style.css"> <!-- External CSS linked here -->
+</head>
+<body>
+  <header>
+    <h1>Waldo Bosch | Sept 20, 2025 | External CSS & Validation Assignment</h1>
+  </header>
+  
+  <div class="card">
+    <h2 id="main-title">Welcome to FitLifeHub</h2>
+    <p>This is the homepage styled with an external style sheet.</p>
+  </div>
+</body>
 
 /* ===== Header ===== */
 header {
