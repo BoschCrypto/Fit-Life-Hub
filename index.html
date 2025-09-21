@@ -1,23 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8" />
   <title>FitLife Hub – Home</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="FitLife Hub: Your guide to fitness & nutrition for students.">
-
-  <!-- External CSS -->
-  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="FitLife Hub: Your guide to fitness & nutrition for students." />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <header>
-    <div class="container">
-      <h1>FitLife Hub</h1>
+    <div class="container header-inner">
+      <div class="site-title">FitLife Hub</div>
       <nav aria-label="Primary">
         <ul>
           <li><a href="index.html" aria-current="page">Home</a></li>
-          <li><a href="nutrition%20page.html">Nutrition</a></li>
-          <li><a href="form%20page.html">Contact</a></li>
+          <li><a href="nutrition.html">Nutrition</a></li>
+          <li><a href="form.html">Contact</a></li>
         </ul>
       </nav>
     </div>
@@ -26,50 +24,47 @@
   <main class="container">
     <!-- HERO -->
     <section class="hero" aria-labelledby="hero-title">
-      <div class="hero-text">
+      <div>
         <h2 id="hero-title">FitLife: Your Guide to Fitness &amp; Nutrition</h2>
-        <p class="tagline"><em>“Your Health, Your Wealth.”</em></p>
+        <p class="tagline">“Your Health, Your Wealth.”</p>
       </div>
       <figure>
-        <img src="images/index%20header%20img.jpg"
-             alt="Hands lifting a dumbbell from a rack in the gym">
+        <img src="images/index-header.jpg" alt="Hands lifting a dumbbell from a rack in the gym" />
       </figure>
     </section>
 
-    <!-- Welcome intro -->
-    <section class="intro" aria-labelledby="welcome">
+    <!-- Welcome -->
+    <section class="section" aria-labelledby="welcome">
       <h2 id="welcome">Welcome to FitLife Hub</h2>
-      <p>
+      <p style="margin-top:.6rem">
         Your ultimate resource for building a healthier lifestyle through balanced
         nutrition and practical fitness. FitLife Hub helps students and young
         adults with accessible, science-based guidance.
       </p>
     </section>
 
-    <!-- Feature cards -->
-    <section class="features" aria-labelledby="feature-cards">
-      <h2 id="feature-cards">Featured Paths</h2>
-      <div class="cards">
+    <!-- Features -->
+    <section class="section" aria-labelledby="feature-cards">
+      <h2 id="feature-cards" class="center">Featured Paths</h2>
+      <div class="grid" style="margin-top:1rem">
         <article class="card">
-          <img src="images/index%20fitness%20img.jpg"
-               alt="Student standing in a gym with fitness machines">
+          <img src="images/index-fitness.jpg" alt="Student in a gym with fitness machines" />
           <h3>Start Your Fitness Journey</h3>
           <p>Beginner-friendly workouts designed for busy students.</p>
           <a href="#programs" class="btn">Start Your Fitness Plan</a>
         </article>
 
         <article class="card">
-          <img src="images/index%20nutrition%20img.jpg"
-               alt="Plate of roasted vegetables and grains">
+          <img src="images/index-nutrition.jpg" alt="Plate of roasted vegetables and grains" />
           <h3>Learn About Nutrition</h3>
           <p>Meal basics, easy recipes, and smart grocery strategies.</p>
-          <a href="nutrition%20page.html" class="btn">Learn More</a>
+          <a href="nutrition.html" class="btn">Learn More</a>
         </article>
       </div>
     </section>
 
-    <!-- Value props -->
-    <section class="values" aria-labelledby="values">
+    <!-- Why it works -->
+    <section class="section values" aria-labelledby="values">
       <h2 id="values">Why FitLife Works</h2>
       <ul>
         <li><strong>Simple:</strong> Clear weekly workouts and meal ideas built for beginners.</li>
