@@ -1,39 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>FitLifeHub - Nutrition</title>
-  <link rel="stylesheet" href="styles.css">
+  <meta charset="utf-8" />
+  <title>FitLife Hub – Nutrition</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="FitLife Hub nutrition tips, recipes, and planning." />
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <header>
-    <h1>FitLifeHub</h1>
-    <p>Name: Waldo Bosch | Date: September 21, 2025 | Assignment: Nutrition Page</p>
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="nutrition.html" class="active">Nutrition</a></li>
-        <li><a href="form.html">Form</a></li>
-      </ul>
-    </nav>
+    <div class="container header-inner">
+      <div class="site-title">FitLife Hub</div>
+      <nav aria-label="Primary">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a class="active" aria-current="page" href="nutrition.html">Nutrition</a></li>
+          <li><a href="form.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
 
-  <main>
-    <section class="content">
-      <h2>Nutrition Tips</h2>
-      <p>Good nutrition is the foundation for a healthy lifestyle. Here are some quick tips:</p>
-      <ul>
-        <li>Eat a balanced diet with fruits, vegetables, and proteins.</li>
-        <li>Stay hydrated throughout the day.</li>
-        <li>Limit processed and sugary foods.</li>
-        <li>Plan your meals ahead to avoid unhealthy snacking.</li>
-      </ul>
+  <main class="container">
+    <!-- HERO -->
+    <section class="hero" aria-labelledby="nutri-hero">
+      <div>
+        <h2 id="nutri-hero">Eat Well, Feel Strong</h2>
+        <p class="tagline">Simple, affordable meals to fuel your goals.</p>
+      </div>
+      <figure>
+        <img src="images/nutrition-hero.jpg" alt="Colorful bowls of healthy food" />
+      </figure>
+    </section>
+
+    <!-- Tips -->
+    <section class="section" aria-labelledby="tips">
+      <h2 id="tips" class="center">Quick Tips</h2>
+      <div class="grid" style="margin-top:1rem">
+        <article class="card">
+          <h3>Build Balanced Plates</h3>
+          <p>Half veggies, quarter protein, quarter carbs + healthy fats.</p>
+        </article>
+        <article class="card">
+          <h3>Shop Smart</h3>
+          <p>Plan 3–4 meals, buy in-season produce, and compare unit prices.</p>
+        </article>
+        <article class="card">
+          <h3>Prep Once</h3>
+          <p>Batch cook grains and proteins on Sunday to save time midweek.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Recipes -->
+    <section class="section" aria-labelledby="recipes">
+      <h2 id="recipes" class="center">Easy Recipes</h2>
+      <div class="grid" style="margin-top:1rem">
+        <article class="card">
+          <img src="images/recipe-oats.jpg" alt="Overnight oats in a jar" />
+          <h3>Overnight Oats</h3>
+          <p>Oats + milk + chia + fruit. Chill overnight, grab and go.</p>
+        </article>
+        <article class="card">
+          <img src="images/recipe-bowl.jpg" alt="Protein bowl with grains and veggies" />
+          <h3>Protein Power Bowl</h3>
+          <p>Rice, beans, chicken/tofu, salsa, avocado, and greens.</p>
+        </article>
+        <article class="card">
+          <img src="images/recipe-pasta.jpg" alt="Veggie pasta bowl" />
+          <h3>Veggie Pasta</h3>
+          <p>Whole-wheat pasta, roasted veg, olive oil, and parmesan.</p>
+        </article>
+      </div>
     </section>
   </main>
 
   <footer>
-    <p>&copy; 2025 FitLifeHub | All Rights Reserved</p>
+    <p>&copy; 2025 FitLife Hub. All rights reserved.</p>
   </footer>
 </body>
 </html>
