@@ -6,35 +6,38 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="FitLife Hub: Your guide to fitness & nutrition for students.">
 
-  <!-- Link to external CSS -->
+  <!-- External CSS -->
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header>
-    <h1>FitLife Hub</h1>
-    <nav aria-label="Primary">
-      <ul>
-        <li><a href="index.html" aria-current="page">Home</a></li>
-        <li><a href="nutrition%20page.html">Nutrition</a></li>
-        <li><a href="form%20page.html">Contact</a></li>
-      </ul>
-    </nav>
+    <div class="container">
+      <h1>FitLife Hub</h1>
+      <nav aria-label="Primary">
+        <ul>
+          <li><a href="index.html" aria-current="page">Home</a></li>
+          <li><a href="nutrition%20page.html">Nutrition</a></li>
+          <li><a href="form%20page.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
 
-  <main>
+  <main class="container">
     <!-- HERO -->
-    <section aria-labelledby="hero-title">
-      <h2 id="hero-title">FitLife: Your Guide to Fitness &amp; Nutrition</h2>
-      <p><em>“Your Health, Your Wealth.”</em></p>
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-text">
+        <h2 id="hero-title">FitLife: Your Guide to Fitness &amp; Nutrition</h2>
+        <p class="tagline"><em>“Your Health, Your Wealth.”</em></p>
+      </div>
       <figure>
         <img src="images/index%20header%20img.jpg"
-             alt="Hands lifting a dumbbell from a rack in the gym"
-             width="1080" height="1475">
+             alt="Hands lifting a dumbbell from a rack in the gym">
       </figure>
     </section>
 
     <!-- Welcome intro -->
-    <section aria-labelledby="welcome">
+    <section class="intro" aria-labelledby="welcome">
       <h2 id="welcome">Welcome to FitLife Hub</h2>
       <p>
         Your ultimate resource for building a healthier lifestyle through balanced
@@ -44,67 +47,40 @@
     </section>
 
     <!-- Feature cards -->
-    <section aria-labelledby="feature-cards">
+    <section class="features" aria-labelledby="feature-cards">
       <h2 id="feature-cards">Featured Paths</h2>
-
-      <article class="card">
-        <h3>Start Your Fitness Journey</h3>
-        <figure>
+      <div class="cards">
+        <article class="card">
           <img src="images/index%20fitness%20img.jpg"
-               alt="Student standing in a gym with fitness machines"
-               width="600" height="900">
-          <figcaption>Beginner-friendly workouts designed for busy students.</figcaption>
-        </figure>
-        <p><a href="#programs" class="button">Start Your Fitness Plan</a></p>
-      </article>
+               alt="Student standing in a gym with fitness machines">
+          <h3>Start Your Fitness Journey</h3>
+          <p>Beginner-friendly workouts designed for busy students.</p>
+          <a href="#programs" class="btn">Start Your Fitness Plan</a>
+        </article>
 
-      <article class="card">
-        <h3>Learn About Nutrition</h3>
-        <figure>
+        <article class="card">
           <img src="images/index%20nutrition%20img.jpg"
-               alt="Plate of roasted vegetables and grains"
-               width="900" height="600">
-          <figcaption>Meal basics, easy recipes, and smart grocery strategies.</figcaption>
-        </figure>
-        <p><a href="nutrition%20page.html" class="button">Learn More About Nutrition</a></p>
-      </article>
+               alt="Plate of roasted vegetables and grains">
+          <h3>Learn About Nutrition</h3>
+          <p>Meal basics, easy recipes, and smart grocery strategies.</p>
+          <a href="nutrition%20page.html" class="btn">Learn More</a>
+        </article>
+      </div>
     </section>
 
     <!-- Value props -->
-    <section aria-labelledby="values">
+    <section class="values" aria-labelledby="values">
       <h2 id="values">Why FitLife Works</h2>
       <ul>
-        <li>
-          <h3>Simple</h3>
-          <p>Clear weekly workouts and meal ideas built for beginners.</p>
-        </li>
-        <li>
-          <h3>Affordable</h3>
-          <p>Budget-conscious recipes, store brands, and low-cost exercise options.</p>
-        </li>
-        <li>
-          <h3>Realistic</h3>
-          <p>Flexible plans that fit a student schedule and energy levels.</p>
-        </li>
+        <li><strong>Simple:</strong> Clear weekly workouts and meal ideas built for beginners.</li>
+        <li><strong>Affordable:</strong> Budget-conscious recipes and low-cost exercise options.</li>
+        <li><strong>Realistic:</strong> Flexible plans that fit a student schedule.</li>
       </ul>
-    </section>
-
-    <!-- Programs (target for the CTA) -->
-    <section id="programs" aria-labelledby="programs-title">
-      <h2 id="programs-title">Programs</h2>
-      <article>
-        <h3>Weekly Workout Plan</h3>
-        <p>3-day split with rest and recovery guidance.</p>
-      </article>
-      <article>
-        <h3>Home Cardio</h3>
-        <p>Low-impact intervals that don’t require equipment.</p>
-      </article>
     </section>
   </main>
 
   <footer>
-    <p>&copy; 2025 FitLife Hub.</p>
+    <p>&copy; 2025 FitLife Hub. All rights reserved.</p>
   </footer>
 </body>
 </html>
