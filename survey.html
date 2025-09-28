@@ -4,82 +4,56 @@
   <meta charset="utf-8" />
   <title>Website Usability Survey</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="style.css" />
   <style>
-    :root {
-      --bg:#0b0c10; --card:#121318; --muted:#aeb3c2; --text:#e8ecf3; --accent:#6ca1ff; --accent-2:#58d8a3; --danger:#ff6b6b;
-      --border:#1f2330;
-    }
-    body { margin:0; font-family:system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; background:var(--bg); color:var(--text); }
-    .wrap { max-width:860px; margin:40px auto; padding:0 16px; }
-    .card { background:var(--card); border:1px solid var(--border); border-radius:16px; padding:24px; box-shadow:0 10px 30px rgba(0,0,0,.2); }
-    h1 { margin-top:0; font-size:1.6rem; }
-    p.lead { color:var(--muted); }
-    a { color:var(--accent); }
-    fieldset { border:1px solid var(--border); border-radius:12px; padding:16px; margin:18px 0; }
-    legend { padding:0 6px; color:var(--muted); }
-    label { display:block; margin:10px 0 6px; font-weight:600; }
-    input[type="text"], input[type="email"], input[type="url"], textarea, select {
-      width:100%; padding:12px; border:1px solid var(--border); border-radius:10px; background:#0f1118; color:var(--text);
-    }
-    textarea { min-height:100px; }
-    .row { display:grid; gap:12px; grid-template-columns:1fr 1fr; }
-    .help { color:var(--muted); font-size:.9rem; }
-    .choices { display:flex; flex-wrap:wrap; gap:10px 20px; margin-top:6px; }
-    .choices label { font-weight:500; display:flex; align-items:center; gap:6px; margin:0; }
-    .scale { display:flex; gap:10px; flex-wrap:wrap; }
-    .scale .tick { display:flex; align-items:center; gap:6px; }
-    .required::after { content:" *"; color:var(--danger); }
-    .btn {
-      appearance:none; border:0; background:linear-gradient(90deg, var(--accent), var(--accent-2));
-      color:#0a0a0a; font-weight:700; padding:12px 18px; border-radius:12px; cursor:pointer;
-    }
-    .btn[disabled] { opacity:.6; cursor:not-allowed; }
-    .status { margin-top:14px; min-height:1.2em; font-weight:600; }
-    .status.ok { color:var(--accent-2); }
-    .status.err { color:var(--danger); }
-    .sr-only { position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); border:0; }
-    @media (max-width:720px){ .row{grid-template-columns:1fr;} }
+    /* lightweight extras, safe with your style.css */
+    .page {max-width: 860px; margin: 40px auto; padding: 0 16px;}
+    .card {background:#111827; color:#e5e7eb; border:1px solid #1f2937; border-radius:16px; padding:24px;}
+    .card h1 {margin: 0 0 10px;}
+    fieldset{border:1px solid #1f2937; border-radius:12px; padding:16px; margin:18px 0;}
+    label{display:block; margin:10px 0 6px; font-weight:600;}
+    input[type="text"],input[type="email"],textarea,select{width:100%; padding:12px; border:1px solid #1f2937; border-radius:10px; background:#0b1220; color:#e5e7eb;}
+    textarea{min-height:110px;}
+    .row{display:grid; gap:12px; grid-template-columns:1fr 1fr;}
+    .choices{display:flex; flex-wrap:wrap; gap:10px 18px;}
+    .btn{appearance:none; background:#60a5fa; color:#0a0a0a; font-weight:700; padding:12px 18px; border-radius:12px; border:0; cursor:pointer;}
+    .status{margin-top:12px; min-height:1.2em; font-weight:600;}
+    .ok{color:#34d399;} .err{color:#f87171;}
+    @media (max-width:720px){.row{grid-template-columns:1fr;}}
   </style>
 </head>
 <body>
-  <main class="wrap">
+  <!-- If you have a site-wide header/nav, keep it here -->
+  <main class="page">
     <div class="card">
       <h1>Website Usability Survey</h1>
-      <p class="lead">
-        Please visit <a href="https://YOUR-WEBSITE-URL.com" target="_blank" rel="noopener">our website</a> first, then answer the questions below.
-        This takes ~5–7 minutes. Required questions are marked with <span style="color:var(--danger)">*</span>.
-      </p>
+      <p>Please visit <a href="https://YOUR-SITE-URL" target="_blank" rel="noopener">our website</a> first, then answer the questions below. Required questions are marked with *.</p>
 
       <form id="survey" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" novalidate>
-        <!-- link captured for your records -->
-        <input type="hidden" name="website_url" value="https://YOUR-WEBSITE-URL.com" />
-        <!-- honeypot (anti-spam) -->
-        <label class="sr-only">Leave this field blank</label>
-        <input class="sr-only" type="text" name="_gotcha" tabindex="-1" autocomplete="off" />
+        <input type="hidden" name="website_url" value="https://YOUR-SITE-URL" />
+        <input type="text" name="_gotcha" class="sr-only" style="position:absolute;left:-9999px;" aria-hidden="true" tabindex="-1" autocomplete="off" />
 
         <fieldset>
           <legend>About you</legend>
-          <label class="required" for="full_name">Full name</label>
-          <input id="full_name" name="full_name" type="text" placeholder="First Last" required />
+          <label for="full_name">Full name *</label>
+          <input id="full_name" name="full_name" type="text" required />
 
           <div class="row">
             <div>
               <label for="email">Email (optional)</label>
-              <input id="email" name="email" type="email" placeholder="you@example.com" />
+              <input id="email" name="email" type="email" />
             </div>
             <div>
-              <label class="required" for="device">Device used</label>
+              <label for="device">Device used *</label>
               <select id="device" name="device" required>
                 <option value="" disabled selected>Select…</option>
-                <option>Desktop / Laptop</option>
-                <option>Tablet</option>
-                <option>Phone</option>
+                <option>Desktop / Laptop</option><option>Tablet</option><option>Phone</option>
               </select>
             </div>
           </div>
 
-          <label class="required">Primary browser</label>
-          <div class="choices" role="group" aria-label="Primary browser">
+          <label>Primary browser *</label>
+          <div class="choices" role="group" aria-label="Browser">
             <label><input type="radio" name="browser" value="Chrome" required /> Chrome</label>
             <label><input type="radio" name="browser" value="Safari" /> Safari</label>
             <label><input type="radio" name="browser" value="Edge" /> Edge</label>
@@ -90,94 +64,91 @@
 
         <fieldset>
           <legend>Overall experience</legend>
-
-          <label class="required">How easy was it to navigate the site? (1–5)</label>
-          <div class="scale">
-            <label class="tick"><input type="radio" name="nav_ease" value="1" required /> 1</label>
-            <label class="tick"><input type="radio" name="nav_ease" value="2" /> 2</label>
-            <label class="tick"><input type="radio" name="nav_ease" value="3" /> 3</label>
-            <label class="tick"><input type="radio" name="nav_ease" value="4" /> 4</label>
-            <label class="tick"><input type="radio" name="nav_ease" value="5" /> 5</label>
+          <label>Navigation ease (1–5) *</label>
+          <div class="choices">
+            <label><input type="radio" name="nav_ease" value="1" required />1</label>
+            <label><input type="radio" name="nav_ease" value="2" />2</label>
+            <label><input type="radio" name="nav_ease" value="3" />3</label>
+            <label><input type="radio" name="nav_ease" value="4" />4</label>
+            <label><input type="radio" name="nav_ease" value="5" />5</label>
           </div>
 
-          <label class="required">How clear was the information? (1–5)</label>
-          <div class="scale">
-            <label class="tick"><input type="radio" name="info_clarity" value="1" required /> 1</label>
-            <label class="tick"><input type="radio" name="info_clarity" value="2" /> 2</label>
-            <label class="tick"><input type="radio" name="info_clarity" value="3" /> 3</label>
-            <label class="tick"><input type="radio" name="info_clarity" value="4" /> 4</label>
-            <label class="tick"><input type="radio" name="info_clarity" value="5" /> 5</label>
+          <label>Info clarity (1–5) *</label>
+          <div class="choices">
+            <label><input type="radio" name="info_clarity" value="1" required />1</label>
+            <label><input type="radio" name="info_clarity" value="2" />2</label>
+            <label><input type="radio" name="info_clarity" value="3" />3</label>
+            <label><input type="radio" name="info_clarity" value="4" />4</label>
+            <label><input type="radio" name="info_clarity" value="5" />5</label>
           </div>
 
-          <label class="required">Visual design satisfaction (1–5)</label>
-          <div class="scale">
-            <label class="tick"><input type="radio" name="visual_design" value="1" required /> 1</label>
-            <label class="tick"><input type="radio" name="visual_design" value="2" /> 2</label>
-            <label class="tick"><input type="radio" name="visual_design" value="3" /> 3</label>
-            <label class="tick"><input type="radio" name="visual_design" value="4" /> 4</label>
-            <label class="tick"><input type="radio" name="visual_design" value="5" /> 5</label>
+          <label>Visual design satisfaction (1–5) *</label>
+          <div class="choices">
+            <label><input type="radio" name="visual_design" value="1" required />1</label>
+            <label><input type="radio" name="visual_design" value="2" />2</label>
+            <label><input type="radio" name="visual_design" value="3" />3</label>
+            <label><input type="radio" name="visual_design" value="4" />4</label>
+            <label><input type="radio" name="visual_design" value="5" />5</label>
           </div>
 
-          <label class="required">Page load speed (1–5)</label>
-          <div class="scale">
-            <label class="tick"><input type="radio" name="speed" value="1" required /> 1</label>
-            <label class="tick"><input type="radio" name="speed" value="2" /> 2</label>
-            <label class="tick"><input type="radio" name="speed" value="3" /> 3</label>
-            <label class="tick"><input type="radio" name="speed" value="4" /> 4</label>
-            <label class="tick"><input type="radio" name="speed" value="5" /> 5</label>
+          <label>Page load speed (1–5) *</label>
+          <div class="choices">
+            <label><input type="radio" name="speed" value="1" required />1</label>
+            <label><input type="radio" name="speed" value="2" />2</label>
+            <label><input type="radio" name="speed" value="3" />3</label>
+            <label><input type="radio" name="speed" value="4" />4</label>
+            <label><input type="radio" name="speed" value="5" />5</label>
           </div>
 
-          <label class="required">How likely are you to recommend this site? (0–10)</label>
-          <div class="scale" aria-label="Likelihood to recommend (0 to 10)">
-            <label class="tick"><input type="radio" name="nps" value="0" required /> 0</label>
-            <label class="tick"><input type="radio" name="nps" value="1" /> 1</label>
-            <label class="tick"><input type="radio" name="nps" value="2" /> 2</label>
-            <label class="tick"><input type="radio" name="nps" value="3" /> 3</label>
-            <label class="tick"><input type="radio" name="nps" value="4" /> 4</label>
-            <label class="tick"><input type="radio" name="nps" value="5" /> 5</label>
-            <label class="tick"><input type="radio" name="nps" value="6" /> 6</label>
-            <label class="tick"><input type="radio" name="nps" value="7" /> 7</label>
-            <label class="tick"><input type="radio" name="nps" value="8" /> 8</label>
-            <label class="tick"><input type="radio" name="nps" value="9" /> 9</label>
-            <label class="tick"><input type="radio" name="nps" value="10" /> 10</label>
+          <label>Likelihood to recommend (0–10) *</label>
+          <div class="choices" aria-label="NPS">
+            <label><input type="radio" name="nps" value="0" required />0</label>
+            <label><input type="radio" name="nps" value="1" />1</label>
+            <label><input type="radio" name="nps" value="2" />2</label>
+            <label><input type="radio" name="nps" value="3" />3</label>
+            <label><input type="radio" name="nps" value="4" />4</label>
+            <label><input type="radio" name="nps" value="5" />5</label>
+            <label><input type="radio" name="nps" value="6" />6</label>
+            <label><input type="radio" name="nps" value="7" />7</label>
+            <label><input type="radio" name="nps" value="8" />8</label>
+            <label><input type="radio" name="nps" value="9" />9</label>
+            <label><input type="radio" name="nps" value="10" />10</label>
           </div>
         </fieldset>
 
         <fieldset>
           <legend>Tasks & feedback</legend>
+          <label for="task_tried">Which key task did you try? *</label>
+          <input id="task_tried" name="task_tried" type="text" required />
 
-          <label class="required" for="task_tried">Which key task did you try?</label>
-          <input id="task_tried" name="task_tried" type="text" placeholder="e.g., find contact info, submit a form…" required />
-
-          <label class="required">Were you able to complete it?</label>
+          <label>Were you able to complete it? *</label>
           <div class="choices" role="group" aria-label="Task success">
-            <label><input type="radio" name="task_success" value="Completed easily" required /> Completed easily</label>
-            <label><input type="radio" name="task_success" value="Completed with effort" /> Completed with effort</label>
-            <label><input type="radio" name="task_success" value="Could not complete" /> Could not complete</label>
+            <label><input type="radio" name="task_success" value="Completed easily" required />Completed easily</label>
+            <label><input type="radio" name="task_success" value="Completed with effort" />Completed with effort</label>
+            <label><input type="radio" name="task_success" value="Could not complete" />Could not complete</label>
           </div>
 
-          <label class="required" for="confusing">What (if anything) was confusing or frustrating?</label>
+          <label for="confusing">What was confusing or frustrating? *</label>
           <textarea id="confusing" name="confusing" required></textarea>
 
-          <label class="required" for="one_change">What one change would most improve your experience?</label>
+          <label for="one_change">What one change would most improve your experience? *</label>
           <textarea id="one_change" name="one_change" required></textarea>
 
           <label>Accessibility checks (optional)</label>
-          <div class="choices" role="group" aria-label="Accessibility">
-            <label><input type="checkbox" name="accessibility[]" value="Keyboard navigation OK" /> Keyboard navigation OK</label>
-            <label><input type="checkbox" name="accessibility[]" value="Text size/contrast OK" /> Text size/contrast OK</label>
-            <label><input type="checkbox" name="accessibility[]" value="Forms/labels clear" /> Forms/labels clear</label>
-            <label><input type="checkbox" name="accessibility[]" value="Other issues" /> Other issues (explain below)</label>
+          <div class="choices">
+            <label><input type="checkbox" name="accessibility[]" value="Keyboard navigation OK" />Keyboard navigation OK</label>
+            <label><input type="checkbox" name="accessibility[]" value="Text size/contrast OK" />Text size/contrast OK</label>
+            <label><input type="checkbox" name="accessibility[]" value="Forms/labels clear" />Forms/labels clear</label>
+            <label><input type="checkbox" name="accessibility[]" value="Other issues" />Other issues</label>
           </div>
 
           <label for="accessibility_notes">Accessibility notes (optional)</label>
-          <textarea id="accessibility_notes" name="accessibility_notes" placeholder="Describe any issues you noticed…"></textarea>
+          <textarea id="accessibility_notes" name="accessibility_notes"></textarea>
 
           <label for="other_comments">Any other comments? (optional)</label>
           <textarea id="other_comments" name="other_comments"></textarea>
         </fieldset>
 
-        <!-- formspree options -->
         <input type="hidden" name="_subject" value="New Website Usability Survey response" />
         <input type="hidden" name="_template" value="table" />
 
@@ -188,45 +159,21 @@
   </main>
 
   <script>
-    (function(){
-      const form = document.getElementById('survey');
-      const status = document.getElementById('status');
-
-      function setStatus(msg, ok=true){
-        status.textContent = msg;
-        status.className = 'status ' + (ok ? 'ok' : 'err');
-      }
-
-      form.addEventListener('submit', async (e) => {
-        e.preventDefault();
-        // HTML5 validation UI
-        if (!form.checkValidity()) { form.reportValidity(); return; }
-
-        const btn = form.querySelector('button[type="submit"]');
-        btn.disabled = true; setStatus('Submitting…');
-
-        try {
-          const data = new FormData(form);
-          const res = await fetch(form.action, {
-            method: 'POST',
-            body: data,
-            headers: { 'Accept': 'application/json' }
-          });
-
-          if (res.ok) {
-            setStatus('Thanks! Your feedback has been recorded.', true);
-            form.reset();
-          } else {
-            const err = await res.json().catch(()=>({}));
-            setStatus(err?.errors?.[0]?.message || 'Submission failed. Please try again or email us.', false);
-          }
-        } catch (err) {
-          setStatus('Network error. Please try again later.', false);
-        } finally {
-          btn.disabled = false;
-        }
-      });
-    })();
+    const form = document.getElementById('survey');
+    const status = document.getElementById('status');
+    function setStatus(msg, ok=true){ status.textContent = msg; status.className = 'status ' + (ok ? 'ok' : 'err'); }
+    form.addEventListener('submit', async (e)=>{
+      e.preventDefault();
+      if(!form.checkValidity()){ form.reportValidity(); return; }
+      const btn = form.querySelector('button[type="submit"]');
+      btn.disabled = true; setStatus('Submitting…', true);
+      try{
+        const res = await fetch(form.action,{method:'POST', body:new FormData(form), headers:{Accept:'application/json'}});
+        if(res.ok){ setStatus('Thanks! Your feedback has been recorded.', true); form.reset(); }
+        else{ setStatus('Submission failed. Please try again.', false); }
+      }catch(err){ setStatus('Network error. Please try again later.', false); }
+      btn.disabled = false;
+    });
   </script>
 </body>
 </html>
