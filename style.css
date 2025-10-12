@@ -109,3 +109,26 @@ footer {
   margin-top: 2rem; background: #0d1117; color: #9aa4b2; text-align: center; padding: 1rem 0;
   border-top: 1px solid rgba(255,255,255,.06);
 }
+/* Survey button (matches site buttons) */
+#survey .btn{
+  display: inline-block;
+  font-weight: 700;
+  background: #2563eb;
+  color: #fff;
+  padding: .75rem 1rem;
+  border-radius: 10px;
+  border: 0;
+  cursor: pointer;
+  transition: transform .05s ease, background .2s ease;
+}
+#survey .btn:hover{ background:#1d4ed8; }
+#survey .btn:active{ transform: translateY(1px); }
+#survey .btn:focus-visible{
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(37,99,235,.35);
+}
+#survey .btn[disabled]{
+  opacity: .6;
+  cursor: not-allowed;
+  transform: none;
+}
